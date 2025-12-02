@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gatilho Psicológico - Dossiê Freemium</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+<header class="navbar" id="navbar">
+    <div class="logo">DOSSIÊ_<span>FREEMIUM</span></div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="logica.html">A Lógica</a>
+        <a href="dados.html">Os Dados</a>
+        <a href="visual.html">O Visual</a>
+        <a href="gatilho.html">Gatilho Psicológico</a>
+        <a href="sobre.html">Sobre Nós</a>
+    </nav>
+</header>
+
+
+<section class="sobre">
+    <h2>Gatilho Psicológico</h2>
+    <p></p>
+    <ul>
+        <li>FOMO: medo de perder oportunidades</li>
+        <li>Recompensa variável: ofertas inesperadas</li>
+        <li>Dependência: mecânicas que incentivam o retorno diário</li>
+    </ul>
+</section>
+
+
+<script>
+    window.addEventListener("scroll", () => {
+        const nav = document.getElementById("navbar");
+        nav.classList.toggle("scrolled", window.scrollY > 50);
+    });
+</script>
+
+
+</body>
+</html>

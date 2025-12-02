@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dossiê Freemium</title>
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@300;400;700&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+    <header class="navbar" id="navbar">
+        <div class="logo">DOSSIÊ_<span>FREEMIUM</span></div>
+        <nav>
+            <a href="index.html">Home</a>
+<a href="logica.html">A Lógica</a>
+<a href="dados.html">Os Dados</a>
+<a href="visual.html">O Visual</a>
+<a href="gatilho.html">Gatilho Psicológico</a>
+<a href="sobre.html">Sobre Nós</a>
+        </nav>
+    </header>
+
+
+    <section class="hero" id="home">
+        <h1 class="glow">DOSSIÊ_<span>FREEMIUM</span></h1>
+        <h2>A Lógica de Monetização em Jogos</h2>
+        <p>Uma investigação digital sobre o momento estratégico da oferta</p>
+        <button class="btn">INICIAR INVESTIGAÇÃO →</button>
+    </section>
+
+
+    <section class="sobre">
+        <h2>SOBRE ESTA INVESTIGAÇÃO</h2>
+        <p>
+            Este dossiê digital apresenta uma análise profunda sobre como jogos Freemium determinam
+            o momento ideal para apresentar ofertas aos jogadores.
+        </p>
+        <p>
+            Através de <span class="highlight">fluxogramas</span>,
+            <span class="highlight">modelagem de dados</span> e
+            <span class="highlight">gatilhos psicológicos</span>,
+            revelamos os mecanismos por trás dessa estratégia de monetização bilionária.
+        </p>
+        <p>Navegue pelas seções acima para descobrir cada aspecto deste sistema complexo.</p>
+
+
+        <div class="cards">
+            <div class="card fade-in">
+                <h3>98%</h3>
+                <p>dos jogadores são gratuitos</p>
+            </div>
+            <div class="card fade-in">
+                <h3>2–5%</h3>
+                <p>taxa de conversão típica</p>
+            </div>
+            <div class="card fade-in">
+                <h3>$92B</h3>
+                <p>mercado global mobile em 2023</p>
+            </div>
+        </div>
+    </section>
+
+
+    <script>
+
+
+        window.addEventListener("scroll", () => {
+            const nav = document.getElementById("navbar");
+            nav.classList.toggle("scrolled", window.scrollY > 50);
+        });
+
+
+        const cards = document.querySelectorAll(".fade-in");
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add("show");
+            });
+        }, { threshold: 0.3 });
+
+
+        cards.forEach(card => observer.observe(card));
+    </script>
+
+
+</body>
+</html>
