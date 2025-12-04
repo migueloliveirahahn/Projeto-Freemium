@@ -9,7 +9,6 @@
 </head>
 <body>
 
-
 <header class="navbar" id="navbar">
     <div class="logo">DOSSIÊ_<span>FREEMIUM</span></div>
     <nav>
@@ -22,29 +21,35 @@
     </nav>
 </header>
 
-
 <section class="sobre">
-    <h2>Sobre Nós</h2>
-    <p></p>
+    <h2>Sobre os Investigadores</h2>
+    <p>A dupla responsável por este dossiê digital.</p>
+
     <div class="cards">
+
         <div class="card fade-in">
             <h3>Fulano</h3>
-            <p>Front-end / HTML, CSS, JS</p>
+            <p>Front-end • HTML/CSS/JS</p>
+            <p><small>"Focado em interface e experiência do usuário."</small></p>
+            <a href="#" style="color:#00E6FF;">GitHub / LinkedIn</a>
         </div>
+
         <div class="card fade-in">
             <h3>Ciclano</h3>
-            <p>Design / Mockups / UX</p>
+            <p>Design • UX / Mockups</p>
+            <p><small>"Especialista em telas, identidade visual e protótipos."</small></p>
+            <a href="#" style="color:#00E6FF;">GitHub / LinkedIn</a>
         </div>
-    </div>
-</section>
 
+    </div>
+
+</section>
 
 <script>
     window.addEventListener("scroll", () => {
         const nav = document.getElementById("navbar");
         nav.classList.toggle("scrolled", window.scrollY > 50);
     });
-
 
     const cards = document.querySelectorAll(".fade-in");
     const observer = new IntersectionObserver(entries => {
@@ -53,12 +58,8 @@
         });
     }, { threshold: 0.3 });
 
-
     cards.forEach(card => observer.observe(card));
 </script>
 
-
 </body>
 </html>
-
-

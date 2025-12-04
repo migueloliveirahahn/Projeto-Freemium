@@ -4,6 +4,7 @@ body {
     background: #02020A;
     color: #DDE3FF;
     scroll-behavior: smooth;
+    padding-top: 30px;
 }
 
 h1, h2 {
@@ -153,3 +154,76 @@ nav a:hover {
     }
 }
 
+section {
+    margin-top: 120px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin: 8px 0;
+    font-size: 1.1rem;
+}
+
+.neon {
+    text-shadow: 0 0 8px #00eaff, 0 0 18px #00eaff, 0 0 28px #00eaff;
+}
+
+.neon-purple {
+    text-shadow: 0 0 8px #b400ff, 0 0 18px #b400ff, 0 0 28px #b400ff;
+}
+
+@keyframes pulseNeon {
+    0% { text-shadow: 0 0 6px #00eaff; }
+    50% { text-shadow: 0 0 20px #00eaff; }
+    100% { text-shadow: 0 0 6px #00eaff; }
+}
+
+.neon-anim {
+    animation: pulseNeon 2.5s infinite ease-in-out;
+}
+
+
+.imagem-area {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.imagem-area img {
+    max-width: 90%;
+    border: 1px solid #1A1A40;
+    border-radius: 12px;
+    box-shadow: 0 0 20px #00eaff55;
+}
+
+@media (max-width: 768px) {
+
+    h2 {
+        font-size: 1.7rem;
+        text-align: center;
+    }
+
+    p, li {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
+    .cards {
+        flex-direction: column;
+        gap: 25px;
+        width: 100%;
+    }
+
+    .card {
+        width: 85%;
+    }
+
+    section {
+        margin-top: 140px;
+        padding: 20px;
+    }
+}

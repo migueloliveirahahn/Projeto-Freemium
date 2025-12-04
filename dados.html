@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Os Dados - Dossiê Freemium</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar" id="navbar">
+    <div class="logo">DOSSIÊ_<span>FREEMIUM</span></div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="logica.html">A Lógica</a>
+        <a href="dados.html">Os Dados</a>
+        <a href="visual.html">O Visual</a>
+        <a href="gatilho.html">Gatilho Psicológico</a>
+        <a href="sobre.html">Sobre Nós</a>
+    </nav>
+</header>
+
+<section class="sobre">
+    <h2>Modelo de Dados (DER)</h2>
+    <p>Estas são as tabelas que sustentam o sistema de ofertas em jogos Freemium.</p>
+
+    <div class="cards">
+
+        <div class="card fade-in">
+            <h3>JOGADOR</h3>
+            <p>id_jogador<br>nome<br>nível<br>tipo (pagante / não pagante)</p>
+        </div>
+
+        <div class="card fade-in">
+            <h3>SESSAO_JOGO</h3>
+            <p>id_sessao<br>id_jogador<br>tempo_jogado<br>derrotas_seguidas</p>
+        </div>
+
+        <div class="card fade-in">
+            <h3>OFERTA</h3>
+            <p>id_oferta<br>tipo_oferta<br>valor<br>requisitos</p>
+        </div>
+
+        <div class="card fade-in">
+            <h3>DISPARO_OFERTA</h3>
+            <p>id_disparo<br>id_jogador<br>id_oferta<br>momento_disparo<br>aceitou</p>
+        </div>
+    </div>
+
+    <h2>Descrição Geral</h2>
+    <p>
+        O banco de dados registra todos os eventos que influenciam o momento ideal da oferta.
+        A tabela <span class="highlight">Sessao_Jogo</span> guarda o contexto da partida,
+        enquanto <span class="highlight">Oferta</span> define os pacotes disponíveis.
+        Cada vez que uma oferta aparece, o registro vai para 
+        <span class="highlight">Disparo_Oferta</span>, permitindo analisar o comportamento
+        do jogador ao longo do tempo.
+    </p>
+
+</section>
+
+<script>
+    window.addEventListener("scroll", () => {
+        const nav = document.getElementById("navbar");
+        nav.classList.toggle("scrolled", window.scrollY > 50);
+    });
+
+    const cards = document.querySelectorAll(".fade-in");
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) entry.target.classList.add("show");
+        });
+    }, { threshold: 0.3 });
+
+    cards.forEach(card => observer.observe(card));
+</script>
+
+</body>
+</html>

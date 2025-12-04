@@ -9,7 +9,6 @@
 </head>
 <body>
 
-
 <header class="navbar" id="navbar">
     <div class="logo">DOSSIÊ_<span>FREEMIUM</span></div>
     <nav>
@@ -22,22 +21,50 @@
     </nav>
 </header>
 
-
 <section class="sobre">
-    <h2>O Visual</h2>
-    <p></p>
-</section>
+    <h2>O Visual — Raio-X da Interface</h2>
 
+    <p>Aqui estão os mockups recriados no Figma. As setas e anotações mostram
+    como cada elemento se conecta às tabelas do banco de dados.</p>
+
+    <div class="cards">
+        <div class="card fade-in">
+            <h3>Tela de Loja</h3>
+            <p>(Insira aqui a imagem do mockup)</p>
+            <p><small>
+                • Preço → vem de OFERTA.valor<br>
+                • Nome do jogador → vem de JOGADOR.nome<br>
+                • Recursos faltando → SESSAO_JOGO.derrotas<br>
+            </small></p>
+        </div>
+
+        <div class="card fade-in">
+            <h3>Tela de Oferta Especial</h3>
+            <p>(Insira aqui a imagem do mockup)</p>
+            <p><small>
+                • Tempo restante → OFERTA.requisitos<br>
+                • Botão comprar → registra em DISPARO_OFERTA<br>
+            </small></p>
+        </div>
+    </div>
+
+</section>
 
 <script>
     window.addEventListener("scroll", () => {
         const nav = document.getElementById("navbar");
         nav.classList.toggle("scrolled", window.scrollY > 50);
     });
-</script>
 
+    const cards = document.querySelectorAll(".fade-in");
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) entry.target.classList.add("show");
+        });
+    }, { threshold: 0.3 });
+
+    cards.forEach(card => observer.observe(card));
+</script>
 
 </body>
 </html>
-
-
