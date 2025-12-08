@@ -227,3 +227,72 @@ ul li {
         padding: 20px;
     }
 }
+
+.gatilhos-cards {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.gatilho-card {
+    width: 260px;
+    background: #080820;
+    border-radius: 12px;
+    padding: 25px;
+    border: 1px solid #1A1A40;
+    text-align: center;
+    transition: 0.25s;
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+.gatilho-card h3 {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+}
+
+.gatilho-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px currentColor;
+}
+
+
+.neon-verde {
+    color: #18FF9C;
+    box-shadow: 0 0 14px #18ff9c55;
+}
+
+.neon-azul {
+    color: #00C8FF;
+    box-shadow: 0 0 14px #00c8ff55;
+}
+
+.neon-vermelho {
+    color: #FF3B3B;
+    box-shadow: 0 0 14px #ff3b3b55;
+}
+
+.neon-roxo {
+    color: #B400FF;
+    box-shadow: 0 0 14px #b400ff55;
+}
+
+
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+    transition: 0.8s ease-out;
+}
+
+@media (max-width: 768px) {
+    .gatilhos-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .gatilho-card {
+        width: 85%;
+    }
+}

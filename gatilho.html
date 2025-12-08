@@ -23,15 +23,31 @@
 
 <section class="sobre">
     <h2>Gatilhos Psicológicos</h2>
-
     <p>Jogos Freemium utilizam estratégias comportamentais para aumentar a chance de compra.</p>
 
-    <ul>
-        <li><b>FOMO</b>: medo de perder uma oferta limitada.</li>
-        <li><b>Recompensa variável</b>: itens raros e imprevisíveis.</li>
-        <li><b>Frustração</b>: derrotas criam urgência por recursos.</li>
-        <li><b>Dependência</b>: login diário com recompensas.</li>
-    </ul>
+    <div class="gatilhos-cards">
+
+        <div class="gatilho-card neon-verde fade-in">
+            <h3>FOMO</h3>
+            <p>Medo de perder uma oferta limitada.</p>
+        </div>
+
+        <div class="gatilho-card neon-azul fade-in">
+            <h3>Recompensa Variável</h3>
+            <p>Itens raros e imprevisíveis.</p>
+        </div>
+
+        <div class="gatilho-card neon-vermelho fade-in">
+            <h3>Frustração</h3>
+            <p>Derrotas geram urgência e incentivo à compra.</p>
+        </div>
+
+        <div class="gatilho-card neon-roxo fade-in">
+            <h3>Dependência</h3>
+            <p>Login diário com recompensas.</p>
+        </div>
+
+    </div>
 
     <p>
         Esses elementos não são acidentais; são construídos com base em estudos de 
@@ -39,7 +55,6 @@
         cria um ciclo de expectativa → frustração → alívio pago, sustentando o modelo 
         de monetização Freemium.
     </p>
-
 </section>
 
 
@@ -48,6 +63,24 @@
         const nav = document.getElementById("navbar");
         nav.classList.toggle("scrolled", window.scrollY > 50);
     });
+</script>
+<script>
+    window.addEventListener("scroll", () => {
+        const nav = document.getElementById("navbar");
+        nav.classList.toggle("scrolled", window.scrollY > 50);
+    });
+
+    /* ---- ATIVAR ANIMAÇÃO DOS CARDS ---- */
+    const cards = document.querySelectorAll(".fade-in");
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+            }
+        });
+    }, { threshold: 0.3 });
+
+    cards.forEach(card => observer.observe(card));
 </script>
 
 </body>
