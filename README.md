@@ -65,3 +65,5 @@ Este Dossiê Freemium foi desenvolvido pela equipe:
 1. Clone o repositório:
    ```bash
    git clone https://github.com/seu-usuario/dossie-freemium.git
+2. Acesse pelo link baixo
+  [Acesse meu site](https://meusite.com)
