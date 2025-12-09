@@ -128,7 +128,7 @@ nav a:hover {
 }
 
 .card h3 {
-    font-size: 2.2rem;
+    font-size: 1.6rem;
     color: #B400FF;
 }
 
@@ -294,5 +294,11 @@ ul li {
 
     .gatilho-card {
         width: 85%;
+    }
+}
+@media (max-width: 480px) {
+    .glow {
+        font-size: 2.3rem;
+        line-height: 1.2;
     }
 }
