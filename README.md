@@ -1,7 +1,5 @@
 Dossiê Freemium - Gatilhos Psicológicos em Jogos
 
-![Banner](link-da-imagem-ou-gif-aqui) 
-
 ## 🔍 Sobre o Projeto
 
 Este projeto é um **Dossiê Digital** que analisa a lógica de monetização em jogos **Freemium**, focando nos gatilhos psicológicos utilizados para incentivar compras dentro do jogo. Ele faz parte de um projeto acadêmico que combina conhecimentos de:
