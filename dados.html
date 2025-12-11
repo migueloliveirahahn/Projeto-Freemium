@@ -57,6 +57,75 @@
         <span class="highlight">Disparo_Oferta</span>, permitindo analisar o comportamento
         do jogador ao longo do tempo.
     </p>
+    <!-- ====== DER Thumbnail (cole abaixo do conteúdo existente em dados.html) ====== -->
+<section class="der-section">
+  <h2>Modelo Conceitual (DER)</h2>
+
+  <div class="der-thumb" data-src="assets/Conceitual_projeto.png" role="button" tabindex="0" aria-label="Abrir DER em tamanho maior">
+    <img src="assets/Conceitual_projeto.png" alt="DER Conceitual">
+    <p>Clique para ampliar</p>
+  </div>
+</section>
+
+
+<div id="modal" class="modal" aria-hidden="true">
+  <button class="modal-close" aria-label="Fechar (Esc)">&times;</button>
+  <img class="modal-content" id="modal-img" alt="">
+</div>
+
+<script>
+
+  const derThumb = document.querySelector('.der-thumb');
+  const modal = document.getElementById('modal');
+  const modalImg = document.getElementById('modal-img');
+  const modalCloseBtn = document.querySelector('.modal-close');
+
+
+  function openModal(src, altText = '') {
+    modalImg.src = src;
+    modalImg.alt = altText;
+    modal.style.display = 'block';
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  // close modal
+  function closeModal() {
+    modal.style.display = 'none';
+    modal.setAttribute('aria-hidden', 'true');
+    modalImg.src = ''; 
+    document.body.style.overflow = ''; 
+  }
+
+ 
+  derThumb && derThumb.addEventListener('click', (e) => {
+    const src = derThumb.getAttribute('data-src') || derThumb.querySelector('img').src;
+    const alt = derThumb.querySelector('img').alt || 'Imagem ampliada';
+    openModal(src, alt);
+  });
+
+
+  derThumb && derThumb.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      derThumb.click();
+    }
+  });
+
+  modalCloseBtn && modalCloseBtn.addEventListener('click', closeModal);
+
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal();
+  });
+
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeModal();
+  });
+</script>
+
+
 <a href="visual.html"><button class="btn">VER O VISUAL →</button></a>
 
 </section>
